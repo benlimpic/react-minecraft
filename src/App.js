@@ -1,11 +1,12 @@
 import { Physics } from "@react-three/cannon";
 import { Sky } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Ground } from './components/Ground.js'
-import { Player } from './components/Player.js'
-import { FPV } from './components/FPV'
-import { Cubes } from './components/Cubes'
-import { TextureSelector } from './components/TextureSelector'
+import { Ground } from "./components/Ground.js";
+import { Player } from "./components/Player.js";
+import { FPV } from "./components/FPV";
+import { Cubes } from "./components/Cubes";
+import { TextureSelector } from "./components/TextureSelector";
+import { Menu } from "./components/Menu";
 
 function App() {
   return (
@@ -17,11 +18,12 @@ function App() {
         <Physics>
           <Player />
           <Cubes />
-          <Ground/>
+          <Ground />
         </Physics>
       </Canvas>
-      <div className='absolute centered cursor'>+</div>
+      <div className="absolute centered cursor">+</div>
       <TextureSelector />
+      <Menu />
     </>
   );
 }
