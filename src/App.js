@@ -7,7 +7,6 @@ import { Player } from './components/Player.js'
 function App() {
   return (
     <>
-      <div>Outside Canvas</div>
       <Canvas>
         <Sky sunPosition={[100, 100, 20]} />
         <ambientLight intensity={0.5} />
