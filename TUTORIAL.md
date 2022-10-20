@@ -8,7 +8,9 @@
 - [x] Gravity
 - [x] Movement
 - [x] State management
-- [] Cubes
+- [x] Cubes
+- [x] Adding Cubes
+- [x] Removing Cubes
 - [] Cube type selector
 - [] Save world in localstorage
 - [] Build a house
