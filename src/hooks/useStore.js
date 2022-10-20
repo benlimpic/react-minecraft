@@ -8,8 +8,11 @@ export const useStore = create((set) => ({
     set((prev) => ({
       cubes: [
         ...prev.cubes,
-        { key: nanoid(), pos: [x, y, z], texture: prev.texture },
-      ],
+        { key: nanoid(), 
+          pos: [x, y, z], 
+          texture: prev.texture 
+        }
+      ]
     }));
   },
   removeCube: (x, y, z) => {
@@ -20,7 +23,11 @@ export const useStore = create((set) => ({
         }),
     }));
   },
-  setTexture: () => [],
+  setTexture: (texture) => {
+    set(()=> ({
+      texture
+    }))
+  },
   saveWorld: () => [],
   resetWorld: () => [],
 }));
