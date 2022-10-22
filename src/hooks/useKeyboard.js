@@ -12,6 +12,11 @@ const actionByKey = (key) => {
     Digit3: "glass",
     Digit4: "wood",
     Digit5: "log",
+    Digit6: "cinder",
+    Digit7: "cement",
+    Digit8: "brick",
+    Digit9: "fire",
+    Digit0: "water",
   };
   return keyActionMap[key];
 };
@@ -28,6 +33,11 @@ export const useKeyboard = () => {
     glass: false,
     wood: false,
     log: false,
+    cinder: false,
+    cement: false,
+    brick: false,
+    fire: false,
+    water: false,
   });
 
   const handleKeyDown = useCallback((e) => {

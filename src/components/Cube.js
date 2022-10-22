@@ -4,7 +4,7 @@ import { useStore } from "../hooks/useStore";
 import * as textures from "../images/textures";
 
 export const Cube = ({ position, texture }) => {
-  const [isHovered, setIsHovered] = useState(false)
+  const [isHovered, setIsHovered] = useState(false);
   const [ref] = useBox(() => ({
     type: "Static",
     position,
@@ -18,60 +18,56 @@ export const Cube = ({ position, texture }) => {
 
   return (
     <mesh
-    onPointerMove={(e) => {
-      e.stopPropagation()
-      setIsHovered(true)
-    }}
-    onPointerOut={(e) => {
-      e.stopPropagation()
-      setIsHovered(false)
-    }}
-    onClick={(e) => {
-      e.stopPropagation()
-      const clickedFace = Math.floor(e.faceIndex / 2)
-      const {x, y, z} = ref.current.position
+      onPointerMove={(e) => {
+        e.stopPropagation();
+        setIsHovered(true);
+      }}
+      onPointerOut={(e) => {
+        e.stopPropagation();
+        setIsHovered(false);
+      }}
+      onClick={(e) => {
+        e.stopPropagation();
+        const clickedFace = Math.floor(e.faceIndex / 2);
+        const { x, y, z } = ref.current.position;
 
-      console.log('face:', clickedFace)
+        console.log("face:", clickedFace);
 
-      if (e.altKey) {
-        removeCube(x, y, z)
-        return
-      }
+        if (e.altKey) {
+          removeCube(x, y, z);
+          return;
+        }
 
-      if(clickedFace === 0) {
-        addCube(x + 1, y, z)
-        return
-      }
-      else if(clickedFace === 1) {
-        addCube(x - 1, y, z)
-        return
-      }
-      else if(clickedFace === 2) {
-        addCube(x, y + 1, z)
-        return
-      }
-      else if(clickedFace === 3) {
-        addCube(x, y - 1, z)
-        return
-      }
-      else if(clickedFace === 4) {
-        addCube(x, y, z + 1)
-        return
-      }
-      else if(clickedFace === 5) {
-        addCube(x, y, z - 1)
-        return
-      }
-    }} 
-    ref={ref}
+        if (clickedFace === 0) {
+          addCube(x + 1, y, z);
+          return;
+        } else if (clickedFace === 1) {
+          addCube(x - 1, y, z);
+          return;
+        } else if (clickedFace === 2) {
+          addCube(x, y + 1, z);
+          return;
+        } else if (clickedFace === 3) {
+          addCube(x, y - 1, z);
+          return;
+        } else if (clickedFace === 4) {
+          addCube(x, y, z + 1);
+          return;
+        } else if (clickedFace === 5) {
+          addCube(x, y, z - 1);
+          return;
+        }
+      }}
+      ref={ref}
     >
       <boxBufferGeometry attach="geometry" />
-      <meshStandardMaterial 
-      color={isHovered ? "gray" : "white"} 
-      map={activeTexture}
-      transparent={true}
-      opacity={texture === 'glass' ? .7 : 1} 
-      attach="material" />
+      <meshStandardMaterial
+        color={isHovered ? "gray" : "white"}
+        map={activeTexture}
+        transparent={true}
+        opacity={texture === "glass" || texture === "water" ? 0.6 : 1}
+        attach="material"
+      />
     </mesh>
   );
 };
