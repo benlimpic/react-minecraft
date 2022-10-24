@@ -1,7 +1,7 @@
 {
   "name": "minecraft-react",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@react-three/cannon": "^3.1.2",
     "@react-three/drei": "^7.12.5",
