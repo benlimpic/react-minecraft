@@ -1,9 +1,9 @@
 import { useStore } from '../hooks/useStore'
 
 export const Menu = () => {
-  const [saveWorld, resetWorld] = useStore((state) => [state.saveWorld, state.resetWorld])
+  const [saveWorld, resetWorld] = useStore((state) => [state.save, state.saveWorld])
   return ( <div className='menu absolute'>
-    <button onClick={() => saveWorld()}>Save</button>
-    <button onClick={() => resetWorld()}>Reset</button>
+    <button className='text' onClick={() => saveWorld()}>Save</button>
+    <button className='text' onClick={() => resetWorld()}>Reset</button>
   </div>)
 }
