@@ -8,7 +8,7 @@ import { Cubes } from "./components/Cubes";
 import { TextureSelector } from "./components/TextureSelector";
 import { Menu } from "./components/Menu";
 import { Title } from './components/UserInterface'
-
+import { Load } from './components/Load'
 
 function App() {
   return (
@@ -26,6 +26,7 @@ function App() {
       <Title />
       <TextureSelector />
       <Menu />
+      <Load />
     </>
   );
 }

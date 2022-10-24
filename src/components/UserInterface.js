@@ -8,7 +8,6 @@ export const Title = () => {
     if (!visible) {
       const showTipTimeout = setTimeout(() => {
         setShowTip(false);
-        console.log("timeout display");
       }, 5000);
       setShowTip(true);
       return () => clearTimeout(showTipTimeout);
